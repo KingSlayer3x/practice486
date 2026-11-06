@@ -1,0 +1,26 @@
+/* Minimal styles for all React exercises. Styling is optional: focus on logic first. */
+:root { font-family: system-ui, sans-serif; color: #1f2933; background: #f5f7fa; }
+body { margin: 0; }
+.app { max-width: 960px; margin: 0 auto; padding: 16px; }
+h1, h2, h3 { margin: 0 0 8px; }
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px;
+}
+.card, .panel { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 12px; }
+.card h3 { font-size: 1rem; }
+.muted { color: #627d98; font-size: 0.9rem; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.btn { padding: 6px 10px; border: 1px solid #9fb3c8; background: #fff; border-radius: 6px; cursor: p
+ointer; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+.btn-active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #e0e7ff; font-size: 0.8rem; }
+.error { color: #b42318; background: #fef3f2; border: 1px solid #fda29b; padding: 8px; border-radius
+: 6px; }
+.success { color: #067647; background: #ecfdf3; border: 1px solid #75e0a7; padding: 8px; border-radius: 6px; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+.field input, .field select, .field textarea { padding: 6px; border: 1px solid #9fb3c8; border-radius: 6px; }
+.field .error-text { color: #b42318; font-size: 0.85rem; }
+ul.plain { list-style: none; padding: 0; margin: 0; }
