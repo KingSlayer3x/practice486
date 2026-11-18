@@ -1,6 +1,6 @@
 import { menuItems } from "./menuData.js";
 import { check, checkTrue, summary } from "./check.js";
-import { getItemNames, getItemsByCategory,findItemById, getAvailableItems, toSummary, getMenuBoardLines, summaries } from "./day01.js";
+import { getItemNames, getItemsByCategory,findItemById, getAvailableItems, toSummary, getMenuBoardLines} from "./day01.js";
 // Read these checks: they are also examples of how to call your code.
 console.log("Day 1 checks");
 const names = getItemNames(menuItems);
