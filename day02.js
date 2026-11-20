@@ -22,8 +22,33 @@ export function getTotalPrice(items){
 }
 
 export function getAveragePrice(items){
-    if(items.length === 0) return 0
+    if(items.length === 0) return 0;
     const avg = (getTotalPrice(items)/items.length);
-    console.log(avg)
-    return Math.round(avg * 100) / 100
+    // console.log(avg)
+    return Math.round(avg * 100) / 100;
+}
+
+export function countByCategory(items){
+    return items.reduce((count, item) => {
+        count[item.category] = (count[item.category] ?? 0) +1;
+        return count;
+    }, {});
+}
+
+// export function findMostExpensive(items){
+//     return items.reduce((best, item) => {
+//         if(best === undefined || item.price > best.price){
+//             return item;
+//         }
+//         return best;
+//     }, undefined);
+// }
+
+export function findMostExpensive(items){
+    return items.reduce((best, item) => {
+        if(best === undefined || item.price > best.price){
+            return item;
+        }
+        return best;
+    }, undefined)
 }

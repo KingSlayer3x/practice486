@@ -1,7 +1,8 @@
 import { menuItems } from "./menuData.js";
-import { check, summary } from "./check.js";
+import { check, summary, checkTrue } from "./check.js";
 import {
-hasSpicyItem, allHavePrice, isCategoryFullyAvailable, getTotalPrice, getAveragePrice
+hasSpicyItem, allHavePrice, isCategoryFullyAvailable, getTotalPrice,
+ getAveragePrice, countByCategory, findMostExpensive
 } from "./day02.js";
 console.log("Day 2 checks");
 const notSpicy = menuItems.filter((i) => !i.spicy);
@@ -23,13 +24,13 @@ check("getAveragePrice: full menu", getAveragePrice(menuItems), 9.48);
 check("getAveragePrice: available items only", getAveragePrice(menuItems.filter((i) => i.available))
 , 9.46);
 check("getAveragePrice: empty array", getAveragePrice([]), 0);
-// check("countByCategory: full menu", countByCategory(menuItems), {
-// Starters: 3, Pizza: 3, Mains: 4, Desserts: 2, Drinks: 3,
-// });
-// check("countByCategory: empty array", countByCategory([]), {});
-// check("findMostExpensive: full menu", findMostExpensive(menuItems)?.name, "Grilled Salmon");
-// check("findMostExpensive: drinks only", findMostExpensive(menuItems.filter((i) => i.category === "Drinks"))?.name, "Lemonade");
-// check("findMostExpensive: empty array", findMostExpensive([]), undefined);
-// check("menu still has 15 items", menuItems.length, 15);
-// checkTrue("first item untouched", menuItems[0].price === 6.5 && menuItems[0].name === "Bruschetta");
+check("countByCategory: full menu", countByCategory(menuItems), {
+Starters: 3, Pizza: 3, Mains: 4, Desserts: 2, Drinks: 3,
+});
+check("countByCategory: empty array", countByCategory([]), {});
+check("findMostExpensive: full menu", findMostExpensive(menuItems)?.name, "Grilled Salmon");
+check("findMostExpensive: drinks only", findMostExpensive(menuItems.filter((i) => i.category === "Drinks"))?.name, "Lemonade");
+check("findMostExpensive: empty array", findMostExpensive([]), undefined);
+check("menu still has 15 items", menuItems.length, 15);
+checkTrue("first item untouched", menuItems[0].price === 6.5 && menuItems[0].name === "Bruschetta");
 summary()
